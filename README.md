@@ -14,6 +14,6 @@ Usage
 
 Add an img parameter to the query string to view an image. For example:
 
-http://mycoolwebsite.com/360viewer.html?img=coolPanoramicImage.jpg
+(https://jeremyruhland.github.io/360viewer/360viewer.html?img=exampleImage.jpg)[https://jeremyruhland.github.io/360viewer/360viewer.html?img=exampleImage.jpg]
 
 Currently images need to be fully spherical. It would be fairly easy to modify the code to wrap a rectangular panorama around the inside of a cylinder.
