@@ -9,7 +9,7 @@
         <img id="skyBox" src="" onError="alert('Oops, something went wrong!\nMake sure the img parameter in the URL points to a real image file in this directory.')">
         
     </a-assets>
-    
+    <a-camera id="camera" look-controls="reverseMouseDrag: true" rotation="0 0 0"></a-camera>    
     <a-sky src="#skyBox"></a-sky>
 </a-scene>
 </body>
@@ -30,6 +30,12 @@
 
     // Replace skyBox image with file in url img parameter
     document.getElementById('skyBox').src = urlParams["img"];
+    
+    // Check for optional rotation parameter
+    if ("rotation" in urlParams) {
+        document.getElementById('camera').setAttribute("rotation", '0 ' + urlParams["rotation"] + ' 0');
+    }
+    
 </script>
 <script src="https://aframe.io/releases/0.5.0/aframe.min.js"></script>
 </html>
