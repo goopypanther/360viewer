@@ -1,7 +1,8 @@
 360viewer
 =========
 
-Lightweight 360 degree panoramic image viewer using [aframe](https://aframe.io).
+Lightweight 360 degree panoramic image viewer using [aframe](https://aframe.io).  
+See the github page [here](https://github.com/JeremyRuhland/360viewer).
 
 Installing
 ----------
