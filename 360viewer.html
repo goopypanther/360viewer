@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+</head>
+<body>
+<a-scene>
+    <a-assets>
+        <img id="skyBox" src="" onError="alert('Oops, something went wrong!\nMake sure the img parameter in the URL points to a real image file in this directory.')">
+        
+    </a-assets>
+    
+    <a-sky src="#skyBox"></a-sky>
+</a-scene>
+</body>
+<script type="text/javascript">
+    // Parse URL parameters into urlParams object, yoinked from https://stackoverflow.com/a/2880929/4669881
+    var urlParams;
+    (window.onpopstate = function () {
+        var match,
+            pl     = /\+/g,  // Regex for replacing addition symbol with a space
+            search = /([^&=]+)=?([^&]*)/g,
+            decode = function (s) { return decodeURIComponent(s.replace(pl, " ")); },
+            query  = window.location.search.substring(1);
+
+        urlParams = {};
+        while (match = search.exec(query))
+           urlParams[decode(match[1])] = decode(match[2]);
+    })();
+
+    // Replace skyBox image with file in url img parameter
+    document.getElementById('skyBox').src = urlParams["img"];
+</script>
+<script src="https://aframe.io/releases/0.5.0/aframe.min.js"></script>
+</html>
